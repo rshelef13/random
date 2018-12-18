@@ -1,0 +1,41 @@
+ #include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <string.h>
+
+int new_function(int x1, int *target);
+
+int main(void)
+{
+    //gets input from user for a random number
+    int whatever = get_int("get_int please: \n");
+    int target = 0;
+
+    //I want the 'main' function to print "still working" until 'new_function'
+    while(new_function(whatever, &target) == 100)
+    {
+        printf("still working\n");
+    }
+
+    //then when each iteration of new_function is finished, I want it to print "all done"
+    printf("all done!\n");
+    printf("%i\n", target);
+}
+
+//on each iteration of i, I want the main function to print "still working", until i hits a random number (5)
+int new_function(int x1, int *target)
+{
+    for(int i = 1; i <= x1; i++)
+    {
+        if(i < 5)
+        {
+           *target = 100;
+        }
+
+        else if (i == 5)
+         {
+           *target = 101;
+         }
+    }
+    return *target;
+}
