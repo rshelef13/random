@@ -17,7 +17,7 @@ int main(void)
         printf("still working\n");
     }
 
-    //then when each iteration of new_function is finished, I want it to print "all done"
+    //then when the while loop is satisifed I want it to print "all done"
     printf("all done!\n");
     printf("%i\n", target);
 }
